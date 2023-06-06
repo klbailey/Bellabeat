@@ -54,6 +54,8 @@ Analysis:
 - More minutes are spent being sedentary > lightly active > fairly active > very active
 */
 
+
+
 #Average amount of activity that is performed 
 SELECT
 DISTINCT Id, 
@@ -211,10 +213,12 @@ Analysis:
 - The most hours in bed is Sunday with 8.3 hours
 */
 
+
+
 #combine data form the activity by day and sleep by day tables
 SELECT
 *
-FROM `bellabeat-99999.Case1.ActibityByDay` abd
+FROM `bellabeat-99999.Case1.ActivityByDay` abd
 JOIN `bellabeat-99999.Case1.SleepByDay` sbd
 ON abd.dayofweek = sbd.dayofweek
 
@@ -289,6 +293,5 @@ avg(fairly_active_minutes)/avg(total_amount_of_time) * 100 as fairly_active_perc
 avg(lightly_active_minutes)/avg(total_amount_of_time) * 100 as lightly_active_percentage,
 avg(total_active_time/total_amount_of_time) * 100 as total_active_time_percentage,
 avg(sedentary_hours/total_amount_of_time) * 100 as total_sedentary_hours_percentage
-FROM `peerless-fabric-363002.caseStudy2.total_time_minutes`
+FROM `bellabeat-99999.Case1.SumTotalTimes`
 #exported as ActivityPercentage
-
